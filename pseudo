@@ -1,0 +1,31 @@
+Inicio 
+N, i, tiempo\_libre, actividad ➔ entero
+cont\_leer\_6\_9, cont\_tv ➔ entero 
+porcentaje\_tv ➔ real
+
+cont\_leer\_6\_9 = 0
+cont\_tv = 0
+
+preguntar ("Digite la cantidad de personas encuestadas N: ")
+leer N
+para i = 1 hasta N con incremento 1 hacer:
+    escribir ("--- Persona ", i, " ---")
+    escribir ("Tiempo libre (1: &lt;6h, 2: 6-9h, 3: &gt;9h): ")
+    leer tiempo\_libre
+    escribir ("Actividad (1: Leer, 2: Ver TV, 3: Deporte, 4: Dormir): ")
+    leer actividad
+    
+    si (tiempo\_libre == 2 y actividad == 1) entonces:
+        cont\_leer\_6\_9 = cont\_leer\_6\_9 + 1
+    fin\_si
+
+    si (actividad == 2) entonces:
+        cont\_tv = cont\_tv + 1
+    fin\_si fin\_para
+    
+    porcentaje\_tv = (cont\_tv / N) \* 100
+    
+    escribir ("--- ESTADÍSTICAS DE LA ENCUESTA ---")
+    escribir ("Personas con 6-9 horas libres que prefieren leer: ", cont\_leer\_6\_9)
+    escribir ("Porcentaje de personas que prefieren ver televisión: ", porcentaje\_tv, "%")
+Fin
